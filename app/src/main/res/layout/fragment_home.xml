@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.HomeFragment">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:id="@+id/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:src="@drawable/ic_baseline_menu_24" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+    </Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/search_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/search_view_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="25dp"
+                        android:src="@drawable/ic_baseline_search_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:text="Titles, authors, or topics..."
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+
+                <!--                <SearchView-->
+                <!--                    android:id="@+id/search_button"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="55dp"-->
+                <!--                    android:layout_alignParentTop="true"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:background="@drawable/search_view_background"-->
+                <!--                    android:focusable="false"-->
+                <!--                    android:iconifiedByDefault="false"-->
+                <!--                    android:queryBackground="@android:color/transparent"-->
+                <!--                    android:queryHint="Titles, authors, or topics..."-->
+                <!--                    android:theme="@style/SearchViewStyle" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Author"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_author"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                tools:listitem="@layout/item_categories" />
+
+            <ProgressBar
+                android:visibility="gone"
+                android:id="@+id/progress"
+                android:indeterminateTint="@color/purple_700"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Treding Books"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+
+            <com.eightbitlab.shadowview.ShadowView
+                android:id="@+id/shadowView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:shadowDx="0dp"
+                app:shadowDy="18dp"
+                app:shadowRadius="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_book"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_margin="13dp"
+                    tools:listitem="@layout/item_book" />
+            </com.eightbitlab.shadowview.ShadowView>
+
+
+            <TextView
+                android:id="@+id/favorite_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:text="Favorite Books"
+                android:textColor="@color/black"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <com.eightbitlab.shadowview.ShadowView
+                android:id="@+id/shadowView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:shadowDx="0dp"
+                app:shadowDy="18dp"
+                app:shadowRadius="3dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_book2"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_margin="13dp"
+                    tools:listitem="@layout/item_book" />
+            </com.eightbitlab.shadowview.ShadowView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
